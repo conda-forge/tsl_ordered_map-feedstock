@@ -1,6 +1,6 @@
 {% set name = "tsl_ordered_map" %}
-{% set version = "v0.7.0" %}
-{% set sha256 = "e98ff5afde7ab0b505c514d4bb00e8fcade8a3f2b866112204403015bc8d54a0" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "49cd436b8bdacb01d5f4afd7aab0c0d6fa57433dfc29d65f08a5f1ed1e2af26b" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/Tessil/ordered-map/archive/{{ version }}.tar.gz
+  url: https://github.com/Tessil/ordered-map/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 2000
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -35,8 +35,8 @@ about:
   license: BSD 3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'C++ ordered hash map and hash set'
-  description: 'C++ hash map and hash set which preserve the order of insertion'
+  summary: C++ ordered hash map and hash set
+  description: C++ hash map and hash set which preserve the order of insertion
   doc_url: https://tessil.github.io/ordered-map/
   dev_url: https://github.com/Tessil/ordered-map
 

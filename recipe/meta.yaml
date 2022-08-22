@@ -24,9 +24,12 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/tsl  # [unix]
+    - test -f ${PREFIX}/include/tsl/ordered_hash.h  # [unix]
     - test -f ${PREFIX}/include/tsl/ordered_map.h  # [unix]
-    - test -f ${PREFIX}/lib/cmake/tsl_ordered_map/tsl_ordered_mapConfig.cmake  # [unix]
-    - test -f ${PREFIX}/lib/cmake/tsl_ordered_map/tsl_ordered_mapConfigVersion.cmake  # [unix]
+    - test -f ${PREFIX}/include/tsl/ordered_set.h  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapConfig.cmake  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapTargets.cmake  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\tsl\ordered_map.h (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\tsl_ordered_mapConfig.cmake (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\tsl_ordered_mapConfigVersion.cmake (exit 0) else (exit 1)  # [win]

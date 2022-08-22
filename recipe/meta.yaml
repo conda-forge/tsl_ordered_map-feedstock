@@ -1,6 +1,6 @@
 {% set name = "tsl_ordered_map" %}
-{% set version = "v0.7.0" %}
-{% set sha256 = "e98ff5afde7ab0b505c514d4bb00e8fcade8a3f2b866112204403015bc8d54a0" %}
+{% set version = "v1.0.0" %}
+{% set sha256 = "49cd436b8bdacb01d5f4afd7aab0c0d6fa57433dfc29d65f08a5f1ed1e2af26b" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2000
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
@@ -24,16 +24,19 @@ requirements:
 test:
   commands:
     - test -d ${PREFIX}/include/tsl  # [unix]
+    - test -f ${PREFIX}/include/tsl/ordered_hash.h  # [unix]
     - test -f ${PREFIX}/include/tsl/ordered_map.h  # [unix]
-    - test -f ${PREFIX}/lib/cmake/tsl_ordered_map/tsl_ordered_mapConfig.cmake  # [unix]
-    - test -f ${PREFIX}/lib/cmake/tsl_ordered_map/tsl_ordered_mapConfigVersion.cmake  # [unix]
+    - test -f ${PREFIX}/include/tsl/ordered_set.h  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapConfig.cmake  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapTargets.cmake  # [unix]
+    - test -f ${PREFIX}/share/cmake/tsl-ordered-map/tsl-ordered-mapConfigVersion.cmake  # [unix]
     - if exist %LIBRARY_PREFIX%\include\tsl\ordered_map.h (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\tsl_ordered_mapConfig.cmake (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_PREFIX%\lib\cmake\tsl_ordered_mapConfigVersion.cmake (exit 0) else (exit 1)  # [win]
 
 about:
   home: https://github.com/Tessil/ordered-map
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: 'C++ ordered hash map and hash set'

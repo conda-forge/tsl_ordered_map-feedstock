@@ -3,7 +3,7 @@ About tsl_ordered_map
 
 Home: https://github.com/Tessil/ordered-map
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tsl_ordered_map-feedstock/blob/main/LICENSE.txt)
 
